@@ -60,8 +60,17 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
                 Better for credentials submission
                 More secure
 
+## Logical operators:
+    Combines conditional statements e.g &&, ||, !
 
+## Switch:
+    Replacement to using many elseif statements more efficient, less code to write
 
+## For-loop:
+    Repetition of code for specific number of times
 
+## While-loop:
+    do some code infinitely while some condition remains true
 
-
+## Associative array:
+    An array made of key=>value pairs e.g state and capital
