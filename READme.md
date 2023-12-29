@@ -74,3 +74,23 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
 
 ## Associative array:
     An array made of key=>value pairs e.g state and capital
+
+## isset() & empty():
+    isset() returns true if a variable is defined and not null
+    empty() returns true if a variable is not declared, false, null, ""
+
+## include():
+    copies file content, then includes it to php file. Section of website becomes reusable and changes are only needed to be made in one place
+
+## Cookie:
+    Information about a user stored in a user's web-browser targeted used in advertisements, browsing preferences and other non-sensitive data
+    setcookie (string $name, $value = "", $expires_or_options = 0, $path = "", $domain = "", $secure = false, $httponly = false)
+
+## $_SESSION:
+    Its a super global variable used to store info of a user across multiple pages. Once a session is created, a user is assigned a session-id. It is used for login credentials
+
+## $_SERVER:
+    A super global variable that shows nearly everything one needs to know about current web page environment. It contains headers, paths and script locations. The entries in the array are created by web server.
+
+## Hashing:
+    Used to hide important data from 3rd parties. Involves transforming sensitive data (password) into letters, numbers &/ symbols thru a mathematical process.
