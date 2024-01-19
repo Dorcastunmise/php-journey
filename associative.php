@@ -47,4 +47,14 @@
 //         echo "{$key} = {$value} <br> <br>";
 //     }
 
+$ninjaOne = [
+    'shawn' => 'white',
+    'Matt' => 'black', 
+    'Luisiana' => 'orange', 
+    'Captain' => 'black'
+];
+echo $ninjaOne['Luisiana']. "<br>";
+$ninjaOne['Luisiana'] = 'white';
+echo $ninjaOne['Luisiana']. "<br>";
+echo count($ninjaOne). "<br>";
 ?>

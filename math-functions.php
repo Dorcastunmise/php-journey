@@ -18,19 +18,29 @@
 </body>
 </html>
 <?php 
-    $x = $_POST["x"];
+    /* $x = $_POST["x"];
     $y = $_POST["y"];
     $y = $_POST["z"];
     $total = null;
-    //$total = abs($x); gives absolute integer
-    // $total = round($x); rounds the number to the nearest
-    // $total = floor($x); rounds down always
-    // $total = ceil($x); always round the number up
-    // $total = sqrt($x); square root of x
-    // $total = pow($x, $y); x to the power of y
-    // $total = max($x, $y, $z) highest number out of the three
-    // $total = min($x, $y, $z) lowest number out of the three
-    // $total = pi(); prints 3.1415926535898
-    // $total = rand(1, 6); prints random number between 1 & 6
-    echo $total;
+     $total = abs($x); gives absolute integer
+     $total = round($x); rounds the number to the nearest
+     $total = floor($x); rounds down always
+     $total = ceil($x); always round the number up
+     $total = sqrt($x); square root of x
+     $total = pow($x, $y); x to the power of y
+     $total = max($x, $y, $z) highest number out of the three
+     $total = min($x, $y, $z) lowest number out of the three
+     $total = pi(); prints 3.1415926535898
+     $total = rand(1, 6); prints random number between 1 & 6
+    echo $total; */
+
+    function sayHallo($name = 'Shawn', $time = 'morning') {
+        echo "Good $time, $name";
+    }
+    sayHallo('Takashi', 'night');
+    function formatProduct($product) {
+        return "{$product['name']} costs £ {$product['price']} to buy" . "<br>";
+    }
+    $formattedOutput = formatProduct(['name' => 'gold star', 'price' => 20]);
+    echo $formattedOutput;
 ?>

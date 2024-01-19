@@ -9,6 +9,7 @@
     <form action="while.php" method="post">
         <input type="submit" value="Stop">
     </form>
+    <div><?php echo "secure"?></div>
 </body>
 </html><?php
     $seconds = 0;
