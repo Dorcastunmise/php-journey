@@ -5,7 +5,7 @@
     $pdo = setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo htmlentities($row['_message']);
 -->
-
+<!-- Inserting data -->
 <?php
     $pdo = new PDO('mysql:host=localhost;dbname=database', 'oluwatunmise', 'password');
     
