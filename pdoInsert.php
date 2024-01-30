@@ -5,7 +5,7 @@
     $pdo = setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo htmlentities($row['_message']);
 -->
-<!-- Inserting data -->
+<!-- Inserting data ....you can change things on a POST because crawlers don't follow post & brwosers don't let you double POST -->
 <?php
     $pdo = new PDO('mysql:host=localhost;dbname=database', 'oluwatunmise', 'password');
     
