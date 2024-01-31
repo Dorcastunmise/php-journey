@@ -6,7 +6,7 @@
     3. The creation and destruction of sessions is handled by the web framework or some 
         utility code used in applications.
     4. Login info & shopping cart info are stored in the session in the server
-    5. The session is in the web server. The cookie unlocks the sesson & can also reassociate
+    5. The session is in the web server. The cookie unlocks the session & can also reassociate
         the session.
     6. sesson_destroy() does not change the session ID but deletes the keys in it. 
         So, it empties the session out
@@ -19,7 +19,10 @@
     12. non-session cookies stored on the hard drive of the user's computer
     13. The typical session identifier is a large random number chosen by the server
     14. If a browser does not support cookies, PHP maintain a session by including 
-        the session identifier as a parameter every GET and POST request
+        the session identifier as a parameter every GET and POST request.
+    15. Session data is changed the moment one logs in
+    16. Logging out removes information from a session.
+    17. Session ID cookie is set when first page is delivered.
 
 
 -->

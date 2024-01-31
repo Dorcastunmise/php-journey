@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+<!--POST requests mordify or adds data while GET requests view data-->
     <form action="validation.php" method="post">
         Username: <br>
         <input type="text" name="username"><br>
