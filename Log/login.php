@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_POST['account']) && isset($_POST['pw'])) {
-        unset($_SESSION['account']); //logs out current user
+        unset($_SESSION['account']); //logs out the current user
         if($_POST['pw'] == 'umsi') {
             $_SESSION['account'] = $_POST['account'];
             $_SESSION['success'] = 'Logged in.';
