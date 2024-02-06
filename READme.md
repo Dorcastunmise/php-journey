@@ -94,3 +94,12 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
 
 ## Hashing:
     Used to hide important data from 3rd parties. Involves transforming sensitive data (password) into letters, numbers &/ symbols thru a mathematical process.
+
+## Types
+    4 Scalar Types: Bool, Int, Float, String
+    4 Compound Types: Array, Object, Callable, Iterable
+    2 Special Types: Resource, Null
+    PHP supports strict typing. Its typing occurs at runtime (Php is dynamically typed)
+
+## Strict Typing
+    declare(strict_types=1);
