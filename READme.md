@@ -41,6 +41,21 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
 ## Prerequisites:
     HTML5, MySQL, Web server (e.g XAMPP server), text editor
 
+## Operators
+    Arithmetic operators (+ - * / % **)
+    Assignment operators (= += -= *= /= %= **=)
+    String operators (. .=)
+    Comparison operators (= == === !== !=== <> < > <= >= <=> ?? ?:)
+    Error Control operators (@)
+    $x = @file('index.php'); @ use to control errors
+    Increment/Decrement Operators (++, --)
+    Logical operators (&& || ! and or xor)
+    Bitwise operators (& | ^ ~ << >>)
+    Array operators (+ == === !== <> !===)
+    Execution operators (``)
+    Type operators (instanceof)
+    Nullsafe operator (?)
+
 ## Operator Precedence
     (), **, * / %, + - 
 
@@ -94,3 +109,23 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
 
 ## Hashing:
     Used to hide important data from 3rd parties. Involves transforming sensitive data (password) into letters, numbers &/ symbols thru a mathematical process.
+
+## Types
+    4 Scalar Types: Bool, Int, Float, String
+    4 Compound Types: Array, Object, Callable, Iterable
+    2 Special Types: Resource, Null
+    PHP supports strict typing. Its typing occurs at runtime (Php is dynamically typed)
+
+## Strict Typing
+    declare(strict_types=1);
+
+## Array key
+    {
+        $array = ['a' => 1, 'b' => null];
+
+        //this checks if the key exists
+        var_dump(array_key_exists('b', $array));
+
+        //this checks if the key exists & if it is null
+        var_dump(isset($array['b']));
+    }
