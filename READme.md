@@ -237,7 +237,7 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
 ## Strict Typing
     declare(strict_types=1);
 
-# PHPmyadmin    
+## PHPmyadmin    
     
 1. Difference between CHAR and VARCHAR
 
@@ -325,3 +325,54 @@ Use LIKE for partial matching.
 Use = for exact matches.
 Use IN(...) when checking against multiple possible values.
 It's important to choose the appropriate operator based on the specific requirements of your query and the type of comparison you need.
+
+## var_dump:
+    Dumps information about a variable
+
+## spl_autoload_register([ callable $autoload_function [, bool $throw [, bool $prepend ]]]): bool
+    Register given function as __autoload() implementation
+
+## To access constants in another file
+    classname::constant using the scope resolution e.g Transaction::STATUS_PAID; 
+    Class constants are located once per class & not per instance (i.e there's no need to have the instance of the class to access the class constants). The constants can be accessed on the object level too. e.g
+    $transaction = new Transaction();
+    $transaction::STATUS_PAID;
+
+## Abstraction
+    Process whereby the internal actual implementation details of an object are hidden from the user. Encapsulation hides the internal state / information.
+
+## Inheritance
+    Avoid adding a __construct() to a child class when absent in its parent class. final keyword is used to prevent inheritance and method overwriting e.g 
+        final class Toster
+        
+        // another file
+            class TosterPro extends Toster //won't work 
+
+    PHP 8 does not support multiple inheritance but supports multilevel inheritance.
+
+## Abstract class
+    Its like a template / base class the child class can extend from. 
+    - Abstract classes cannot be instantiated but can only be extended i.e cannot create objects directly from abstract classes. 
+    - Abstract classes method can only contain definition or signature of the abstract class and not an implementation.
+    - It's the child class duty to implement these abstract methods. 
+    - Abstract methods can either be public or protected.
+    - Can only extend a single class
+    - Can implement interfaces within abstract classes
+
+## Interface
+    Defines all necessary actions objects must have. 
+    - All methods declared within the interface must be implemented within the concrete classes that implements the interface. An all methods declared in an interface must be public. 
+    - Usually, <b>implements</b> keyword is used by a concrete class wanting to use/access an interface e.g
+        interface DebtCollector {}
+            // another file
+                class CollectionAgency implements DebtColllector.
+
+    - extends keyword can be used by an interface wanting to access multiple interfaces e.g
+        interface DebtCollector extends CollectorClaim, CollectionAgency {}
+    The negative effect is, any concrete class that implements such interface will have to provide implementation for all the methods used in the interface and also the interfaces implemented.
+    - One cannot have properties in interfaces but constants.
+    - Can only contain methods & constants
+    - Interfaces can be used when 
+        a. When a class can have multiple implementations
+        b. Bunch of conditionals using instanceof or switch / if/else statements
+        c. When in need of template or contract without providing implementation details
