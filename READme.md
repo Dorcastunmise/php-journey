@@ -376,3 +376,18 @@ It's important to choose the appropriate operator based on the specific requirem
         a. When a class can have multiple implementations
         b. Bunch of conditionals using instanceof or switch / if/else statements
         c. When in need of template or contract without providing implementation details
+
+## Traits
+    Used to reduce code duplication and increase code reuse. To use the trait keyword, the use keyword is needed. It will import the code from the trait into the class (or wherever its implementation is needed) at compile time. 
+    Rules: 
+    - Objects of traits cannot be instantiated. Except you use traits within traits or classes
+    - Order of precidence: the class method defined directly in the class ...then ..trait method defined in the trait and then the base method defined in the parent class
+    - Traits allow independent2 classes share common fucntionality
+
+## Identity Operator (===) vs Comparison Operator (==)
+    Comparison Operator: the two objects will be equal if they are the same instances of a class and share the same value
+    Identity Operator: the two objects will be equal if they point/refer to the same instance of a class
+
+## DocBlock (@param && @return)
+    @return: used to documenta return type
+    @param: used to document an argument of a function method
