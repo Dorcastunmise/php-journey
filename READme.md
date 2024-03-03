@@ -391,3 +391,9 @@ It's important to choose the appropriate operator based on the specific requirem
 ## DocBlock (@param && @return)
     @return: used to documenta return type
     @param: used to document an argument of a function method
+
+## Serialization 
+    A process of converting a value in a string form. Methods cannot be serialized. Serialization can be used to pass values around / save them for use in database/somewhereelse. Serialization can also be used for deep copying /cloning. Serialization will serialize the properties and their classes as well except the methods. An unserialized property/object does not create same object.
+
+## Exception
+    Exception is simply an object of exception class that describes an error. It disrupts normal flow of code execution. Can be thrown manually or as a result of error in the php (from built-in functions or from one's code). On 0can only throw exceptions if the instance of the thrown object is an exception class or instance of throwable interface.
