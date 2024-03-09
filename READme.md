@@ -397,3 +397,8 @@ It's important to choose the appropriate operator based on the specific requirem
 
 ## Exception
     Exception is simply an object of exception class that describes an error. It disrupts normal flow of code execution. Can be thrown manually or as a result of error in the php (from built-in functions or from one's code). On 0can only throw exceptions if the instance of the thrown object is an exception class or instance of throwable interface.
+
+## Superglobal
+    1. $_SERVER: contains information about the server and execution environment. Use case:
+    i. To build basic routing. Routing allows us to structure the app in a better way.
+    ii.
