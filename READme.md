@@ -1,7 +1,16 @@
-<<<<<<< HEAD
 # PHP
 
 This is a server-side scripting language embedded in HTML in its simplest form. PHP allows creation of dynamic content and interaction with databases. It's known for its simplicty, speed and flexibility.
+
+## MVC Architecture
+    Scenario: Client/browser sends a request, which goes through a router. Router inturn decides which controller to execute. Controller then passes it to the model layer. Model layer passes the data to a data store/database. Then retrieves the data from the data store and passes it to the controller. Then the controller passes it to the view. The view rendered and displayed to the screen/browser/client.
+    Form validation is the job of the controller. And the job should be taken to another sublayer to keep the controller thin as much as possible.
+
+    Model: handles business logic and manages data of the application. Processes and stores the data.
+    View: makes it easy to use templates
+    Controller: deals with requests, responses. Handles resoucres 
+        An architecture separating data and business logic from presentation layer.
+
 
 ## Paradigm:
     Procedural, object-oriented, functional, reflective.
@@ -95,19 +104,6 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
     isset() returns true if a variable is defined and not null
     empty() returns true if a variable is not declared, false, null, ""
 
-## include():
-    copies file content, then includes it to php file. Section of website becomes reusable and changes are only needed to be made in one place
-
-## Cookie:
-    Information about a user stored in a user's web-browser targeted used in advertisements, browsing preferences and other non-sensitive data
-    setcookie (string $name, $value = "", $expires_or_options = 0, $path = "", $domain = "", $secure = false, $httponly = false)
-
-## $_SESSION:
-    Its a super global variable used to store info of a user across multiple pages. Once a session is created, a user is assigned a session-id. It is used for login credentials
-
-## $_SERVER:
-    A super global variable that shows nearly everything one needs to know about current web page environment. It contains headers, paths and script locations. The entries in the array are created by web server.
-
 ## Hashing:
     Used to hide important data from 3rd parties. Involves transforming sensitive data (password) into letters, numbers &/ symbols thru a mathematical process.
 
@@ -130,83 +126,6 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
         //this checks if the key exists & if it is null
         var_dump(isset($array['b']));
     }
-=======
-# PHP
-
-This is a server-side scripting language embedded in HTML in its simplest form. PHP allows creation of dynamic content and interaction with databases. It's known for its simplicty, speed and flexibility.
-
-## Paradigm:
-    Procedural, object-oriented, functional, reflective.
-
-## Designer:
-    Rasmus Lerdorf
-
-## Developer: 
-    PHP development team, Zend Technologies, PHP Foundation
-
-## OS:
-    UNIX-like, Windows, MacOS, IBM, OpenVMS
-
-## TYPING Discipline: 
-    Dynamic, Weak, gradual
-
-## Implementation language:
-    C(primarily, some components C++)
-
-## First appeared: 
-    June 8, 1995
-
-## Initial Acronym: 
-    P = Personal 
-    H = Home 
-    P = Page
-
-## Present Acronym:
-    P = PHP
-    H = Hypertext
-    P = Preprocessor
-
-## How PHP works:
-    A browser sends a request (http request) to server, then PHP in the server processes the request, then the server sends HTML back to the browser. The server can also communicate to a database then back to the web browser.
-
-PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server, PostgreSQL, ORACLE
-
-## Prerequisites:
-    HTML5, MySQL, Web server (e.g XAMPP server), text editor
-
-## Operator Precedence
-    (), **, * / %, + - 
-
-## $_GET, $_POST
-    Special variables used to collect data from HTML form data. Form's data is sent to the file in action attribute of <form> e.g <form action="some_file.php" method="get">
-<b>$_GET</b> = Data is appended to URL
-            Character limit
-            Bookmark is possible
-            Requests can be cached
-            Better for a search page            
-            Not secure
-
-<b>$_POST</b> = Data is packeged in HTTP request body
-                No data limit
-                Cannot bookmark
-                Requests are not cached
-                Better for credentials submission
-                More secure
-
-## Logical operators:
-    Combines conditional statements e.g &&, ||, !
-
-## Switch:
-    Replacement to using many elseif statements more efficient, less code to write
-
-## For-loop:
-    Repetition of code for specific number of times
-
-## While-loop:
-    do some code infinitely while some condition remains true
-
-## Associative array:
-    An array made of key=>value pairs e.g state and capital
 
 ## isset() & empty():
     isset() returns true if a variable is defined and not null
@@ -224,15 +143,6 @@ PHP is commmonly used with <b> Relational Database </b> e.g MySQL, MsSQL Server,
 
 ## $_SERVER:
     A super global variable that shows nearly everything one needs to know about current web page environment. It contains headers, paths and script locations. The entries in the array are created by web server.
-
-## Hashing:
-    Used to hide important data from 3rd parties. Involves transforming sensitive data (password) into letters, numbers &/ symbols thru a mathematical process.
-
-## Types
-    4 Scalar Types: Bool, Int, Float, String
-    4 Compound Types: Array, Object, Callable, Iterable
-    2 Special Types: Resource, Null
-    PHP supports strict typing. Its typing occurs at runtime (Php is dynamically typed)
 
 ## Strict Typing
     declare(strict_types=1);
@@ -399,6 +309,46 @@ It's important to choose the appropriate operator based on the specific requirem
     Exception is simply an object of exception class that describes an error. It disrupts normal flow of code execution. Can be thrown manually or as a result of error in the php (from built-in functions or from one's code). On 0can only throw exceptions if the instance of the thrown object is an exception class or instance of throwable interface.
 
 ## Superglobal
+    $_SERVER, $_REQUEST, $_GET, $_POST, $_SESSION
     1. $_SERVER: contains information about the server and execution environment. Use case:
     i. To build basic routing. Routing allows us to structure the app in a better way.
-    ii.
+
+    2. Cookies 
+    - are stored on client side
+    - remains till set expiration date/when deleted
+    - used for session management
+    - for tracking targeted ads
+    - used to store info to enhance user experience on website
+    - must be set before any output
+
+    3. Sessions 
+    - are stored on the server
+    - destroyed as soon as the browser is closed
+    - must be started before any output otherwise issues will be faced e.g sessions cannot be sent after headers send a warning.
+
+## HTTP Status codes
+    100-199: Informational
+    200-299: 200-OK, 201-Created, 204-No content
+    300-399: Redirect. 301 - moved permanently, 304 - not modified.
+    400-499: Client error. 401-unauthorized. 403-forbidden. 404-not found. 405-method not allowed
+    500-599: Server errors. 500-internal server error. 502-bad gateway. 
+
+## To create a table in sql
+    CREATE TABLE users (
+    id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    email varchar(255) UNIQUE NOT NULL,
+    full_name varchar(255) NOT NULL,
+    is_active boolean DEFAULT 0 NOT NULL,
+    created_at datetime NOT NULL,
+    KEY `is_active`(`is_active`)
+    );
+
+## To alter a table
+    ALTER TABLE tablename ADD COLUMN columnname varchar(150), DROP COLUMN columname, MODIFY full_name varchar(150)
+    ALTER TABLE `users` CHANGE `ID` `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, add PRIMARY KEY (`ID`);
+
+## to produce a description of table.
+    DESCRIBE tablename
+
+## Update
+    UPDATE tablename SET email = 'jane@gmail.com' WHERE id = 2;
