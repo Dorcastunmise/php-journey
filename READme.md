@@ -346,9 +346,22 @@ It's important to choose the appropriate operator based on the specific requirem
 ## To alter a table
     ALTER TABLE tablename ADD COLUMN columnname varchar(150), DROP COLUMN columname, MODIFY full_name varchar(150)
     ALTER TABLE `users` CHANGE `ID` `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, add PRIMARY KEY (`ID`);
+    ALTER TABLE `users` ADD `firstName` VARCHAR(25) NOT NULL AFTER `password`, ADD `surName` VARCHAR(25) NOT NULL AFTER `firstName`;
+    
 
 ## to produce a description of table.
     DESCRIBE tablename
 
 ## Update
     UPDATE tablename SET email = 'jane@gmail.com' WHERE id = 2;
+    UPDATE `users` SET `firstName` = 'Eze', `surName` = 'Nahim', `fullName` = 'Eze Nahim' WHERE `users`.`ID` = 1; UPDATE `users` SET `firstName` = 'Otito', `surName` = 'Koro', `fullName` = 'Otito Koro' WHERE `users`.`ID` = 2; UPDATE `users` SET `ID` = '3', `firstName` = 'Fred', `surName` = 'Bernad', `fullName` = 'Fred Bernad' WHERE `users`.`ID` = 5;
+
+## Testing
+    Unit Test: tests small piece of code i.e single function & mocks/fakes any needed dependencies or database connections. 
+    Integeration tests: tests multiple modules or units together ( i.e method that connects to database, runs queries & returns something). Dependies can be resolved (instead of being mocked) & can use connection.
+
+## TDD - Test Driven Development
+    Tests are witten first while code is written after. Test with a test case is written. It is made to run(of course which fails). Then a code is written to make it pass. Then, the steps are repeated while refactoring and organizing the code.
+
+## BDD - Behaviour Driven Development
+    Tests are also witten first while code is written after. Behaviours are written in simple english.
