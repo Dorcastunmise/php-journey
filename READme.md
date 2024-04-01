@@ -365,3 +365,10 @@ It's important to choose the appropriate operator based on the specific requirem
 
 ## BDD - Behaviour Driven Development
     Tests are also witten first while code is written after. Behaviours are written in simple english.
+
+## Debug
+    echo - output strings, numbers, html etc
+    print - works like echo, but, can only take in a single argument. e.g print 123;
+    print_r() - prints single arrays and value e,g print_r([1,2,3]);
+    var_dump() - returns more info like data type and length e.g var_dump(true);
+    var_export() - outputs a string representation of a variable. e.g var_export('Hello');
